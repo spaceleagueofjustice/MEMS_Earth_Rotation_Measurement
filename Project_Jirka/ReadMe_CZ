@@ -1,0 +1,118 @@
+3-osá MEMS metoda — konfigurace X/Y/Z
+
+Tato experimentální varianta projektu využívá tři nezávislé MEMS gyroskopy MPU6050 orientované v osách X, Y a Z.
+
+Cílem této konfigurace není pouze měření rotace v jedné ose, ale především:
+
+- analýza korelace mezi osami
+- oddělení mechanických artefaktů
+- identifikace systémového driftu
+- porovnání dlouhodobé stability jednotlivých senzorů
+- možnost pokročilé statistické filtrace
+- detekce společných a rozdílných signálů mezi osami
+
+Konfigurace sestavy:
+
+Gyro X → měření rotace kolem osy X
+Gyro Y → měření rotace kolem osy Y
+Gyro Z → měření rotace kolem osy Z
+
+Každý senzor bude:
+
+- mechanicky pevně uchycen
+- tepelně stabilizován
+- umístěn na společné antivibrační platformě
+- synchronně vzorkován
+
+Hlavní myšlenkou projektu je porovnávání chování jednotlivých os v dlouhodobém měření.
+
+Samostatné MEMS gyro:
+
+- trpí driftováním
+- reaguje na vibrace
+- je citlivé na teplotu
+- generuje náhodný šum
+
+Použití tří navzájem kolmých senzorů umožňuje:
+
+- porovnávat chování jednotlivých os
+- vyhledávat korelované změny
+- identifikovat mechanické rušení
+- oddělit náhodný drift od společných efektů
+
+Pokud se změna objeví:
+
+- pouze v jedné ose → pravděpodobně lokální artefakt
+- současně ve více osách → potenciálně systémový jev
+
+Mechanické vibrace často vytvářejí charakteristické podpisy v konkrétních osách. 3-osá konfigurace umožní jejich identifikaci, filtraci a následnou FFT analýzu.
+
+Každý MEMS senzor driftuje jinak. Porovnání os X, Y a Z umožní odhad stability systému, dlouhodobé statistické vyhodnocení a sledování vlivu teplotních změn.
+
+Projekt využívá vícevrstvou antivibrační konstrukci:
+
+motorová základna
+↓
+hlavní rotační ložisko
+↓
+těžká rotační platforma
+↓
+vibrační izolace
+↓
+gyro platforma
+
+Hlavní cíle mechanické konstrukce:
+
+- minimalizace vibrací
+- eliminace tahání kabelů
+- vysoká hmotová symetrie
+- tepelná stabilita
+- autonomní provoz
+
+Řídicí jednotkou projektu je Raspberry Pi Pico 2 WH.
+
+Použité funkce:
+
+- synchronní čtení IMU
+- lokální logging
+- Wi-Fi přenos dat
+- časová synchronizace
+
+Použité senzory MPU6050 / GY-521 obsahují:
+
+3-osý gyroskop
+3-osý akcelerometr
+interní teplotní senzor
+
+Součástí systému je i samostatné čidlo teploty a vlhkosti DHT11
+
+Systém je navržen jako:
+
+- plně autonomní
+- bateriově napájený
+- bez pohyblivých datových a napájecích kabelů
+
+Cílem je:
+
+- eliminace mechanického rušení
+- omezení EMI
+- dlouhodobé stabilní měření
+
+Plánovaná budoucí rozšíření:
+
+- více synchronizovaných IMU
+- přesnější mechanická platforma
+- aktivní tepelná stabilizace
+- FFT spektrální analýza
+- automatická kompenzace driftu
+- dlouhodobé statistické měření
+- porovnání různých MEMS technologií
+
+Datasheety použitých součástek jsou ke stažení v sekci Datasheets
+
+Designed by S.L.O.J. member Jirka Vacek in collaboration with Hugo Valmont de AI
+
+
+
+
+
