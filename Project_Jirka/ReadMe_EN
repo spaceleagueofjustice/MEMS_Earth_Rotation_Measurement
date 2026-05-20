@@ -1,0 +1,113 @@
+3-Axis MEMS Method — X/Y/Z Configuration
+
+This experimental version of the project uses three independent MEMS MPU6050 gyroscopes oriented along the X, Y, and Z axes.
+
+The goal of this configuration is not only to measure rotation about a single axis, but primarily to:
+
+- analyze correlations between axes
+- separate mechanical artifacts
+- identify system drift
+- compare long-term stability of individual sensors
+- enable advanced statistical filtering
+- detect common and differential signals between axes
+
+System configuration:
+
+Gyro X → measures rotation around the X axis
+Gyro Y → measures rotation around the Y axis
+Gyro Z → measures rotation around the Z axis
+
+Each sensor will be:
+
+- mechanically rigidly mounted
+- thermally stabilized
+- placed on a shared anti-vibration platform
+- synchronously sampled
+
+The main idea of the project is to compare the behavior of individual axes in long-term measurements.
+
+A single MEMS gyro:
+
+- suffers from drift
+- reacts to vibrations
+- is sensitive to temperature
+- generates random noise
+
+Using three mutually orthogonal sensors enables:
+
+- comparison of behavior across axes
+- detection of correlated changes
+- identification of mechanical disturbances
+- separation of random drift from common effects
+
+If a change appears:
+
+only in one axis → likely a local artifact
+simultaneously in multiple axes → potentially a system-wide phenomenon
+
+Mechanical vibrations often produce characteristic signatures in specific axes. A 3-axis configuration enables their identification, filtering, and subsequent FFT analysis.
+
+Each MEMS sensor drifts differently. Comparing the X, Y, and Z axes allows estimation of system stability, long-term statistical evaluation, and monitoring of temperature effects.
+
+The project uses a multi-layer anti-vibration structure:
+
+motor base
+↓
+main rotating bearing
+↓
+heavy rotating platform
+↓
+vibration isolation
+↓
+gyro platform
+
+Main goals of the mechanical design:
+
+- minimization of vibrations
+- elimination of cable drag effects
+- high mass symmetry
+- thermal stability
+- autonomous operation
+
+The control unit of the project is a Raspberry Pi Pico 2 WH.
+
+Implemented functions:
+
+- synchronous IMU reading
+- local data logging
+- Wi-Fi data transmission
+- time synchronization
+
+The used MPU6050 / GY-521 sensors include:
+
+3-axis gyroscope
+3-axis accelerometer
+internal temperature sensor
+
+The system also includes a separate DHT11 temperature and humidity sensor.
+
+The system is designed as:
+
+- fully autonomous
+- battery powered
+- without moving data or power cables
+
+The goals are:
+
+- elimination of mechanical interference
+- reduction of EMI
+- long-term stable measurements
+
+Planned future extensions:
+
+- multiple synchronized IMUs
+- more precise mechanical platform
+- active thermal stabilization
+- FFT spectral analysis
+- automatic drift compensation
+- long-term statistical measurements
+- comparison of different MEMS technologies
+
+Datasheets of the used components are available in the Datasheets section.
+
+Designed by S.L.O.J. member Jirka Vacek in collaboration with Hugo Valmont de AI
