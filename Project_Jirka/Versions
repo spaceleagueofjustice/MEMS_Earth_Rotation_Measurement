@@ -1,0 +1,17 @@
+Struktura verzí projektu:
+Project version structure:
+
+XXX.YYY.ZZZ.NNN
+ |   |   |   └--------------------  Vlastní číslo verze
+ |   |   |                          Custom version number
+ |   |   |
+ |   |   └----------------------------  Revize
+ |   |                                  Revision
+ |   |
+ |   └------------------------------------  Úroveň projektu: 0 - kalibrační testování; 1 - alfa test; 2 - beta test; 3 - ostrá verze
+ |                                          Project level:   0 – calibration testing; 1 – alpha testing; 2 – beta testing; 3 – release version
+ |   
+ └--------------------------------------------  Fáze projektu:   1 - Statická sestava; 2 - Statická sestava, real time přenos dat; 3 - Motorizovaná sestava, real time přenos dat;
+                                                                 4 - Server-klient sestava, real time přenos dat; 5 - motorizovaná server-klient sestava, real time přenos dat
+                                                Project phase:   1 – Static assembly; 2 – Static assembly with real-time data transmission; 3 – Motorized assembly with real-time data transmission
+                                                                 4 – Server–client setup with real-time data transmission; 5 – Motorized server–client setup with real-time data transmission
