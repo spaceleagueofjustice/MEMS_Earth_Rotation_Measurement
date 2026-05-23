@@ -1,0 +1,241 @@
+# Project Constants and Variables
+
+This document contains the primary constants, configuration parameters, global variables, and planned software structure used in the MEMS 3-axis gyroscope project.
+
+The purpose of this document is to keep the firmware architecture consistent during future development.
+
+---
+
+# GLOBAL CONSTANTS
+
+## Hardware
+
+MUX_ADDR = 0x70
+TCA9548A I2C multiplexer address
+
+MPU_ADDR = 0x68
+MPU6050 I2C address
+
+SENSORS = 3
+Number of MPU6050 sensors
+
+DHT_PIN = 15
+GPIO pin used by DHT11
+
+---
+
+## I2C Configuration
+
+I2C_FREQ = 400000
+400 kHz Fast Mode I2C
+
+MUX_SETTLE_US = 200
+Stabilization delay after multiplexer channel switching
+
+---
+
+## Calibration
+
+SAMPLES = 10000
+Number of calibration samples
+
+DELAY = 0.002
+Sampling delay in seconds
+
+MOTION_THRESHOLD = 2.0
+Maximum allowed gyro movement during calibration
+
+ACC_THRESHOLD = 0.15
+Allowed accelerometer deviation during calibration
+
+---
+
+## FFT / Filtering
+
+FFT_SIZE = 4096
+FFT processing window size
+
+SAMPLING_RATE = 500
+Sampling frequency in Hz
+
+LOWPASS_CUTOFF = 5.0
+Low-pass filter cutoff frequency
+
+HIGHPASS_CUTOFF = 0.01
+High-pass filter cutoff frequency
+
+---
+
+## Temperature Compensation
+
+TEMP_COMPENSATION = True
+Enable temperature compensation
+
+TEMP_RECALIBRATION_DELTA = 2.0
+Temperature difference threshold for recalibration
+
+---
+
+## Logging
+
+LOG_INTERVAL = 0.01
+Logging interval
+
+CSV_SEPARATOR = ";"
+CSV separator character
+
+LOG_BUFFER_SIZE = 512
+RAM logging buffer size
+
+---
+
+## Wi-Fi
+
+WIFI_ENABLED = True
+
+TCP_PORT = 5000
+
+UDP_PORT = 5001
+
+STREAM_INTERVAL = 0.05
+
+---
+
+## Motorized Platform
+
+ROTATION_ENABLED = False
+
+RPM = 1.0
+Platform rotation speed
+
+ROTATION_DIRECTION = 1
+
+---
+
+## Statistical Processing
+
+MOVING_AVG_WINDOW = 128
+
+OUTLIER_THRESHOLD = 3.0
+
+ALLAN_WINDOW = 60
+Allan variance interval
+
+---
+
+## Files
+
+CALIBRATION_FILE = "calibration.txt"
+
+LOG_FILE = "gyro_log.csv"
+
+CONFIG_FILE = "config.json"
+
+VERSION = "0.1.0"
+
+---
+
+# GLOBAL VARIABLES
+
+## Calibration
+
+gyro_bias
+Gyroscope offsets
+
+accel_bias
+Accelerometer offsets
+
+gyro_temp
+Calibration temperatures for MPU6050 sensors
+
+humidity_ref
+Reference humidity from DHT11
+
+---
+
+## Live Sensor Data
+
+gyro_data
+Current gyroscope measurements
+
+accel_data
+Current accelerometer measurements
+
+temperature_data
+Current temperature measurements
+
+humidity_data
+Current humidity measurements
+
+---
+
+## FFT Processing
+
+fft_buffer_x
+
+fft_buffer_y
+
+fft_buffer_z
+
+fft_result
+
+---
+
+## Statistics
+
+moving_average
+
+allan_variance
+
+drift_estimation
+
+---
+
+## Logging
+
+log_counter
+
+system_timestamp
+
+last_sync_time
+
+---
+
+## Wi-Fi
+
+wifi_connected
+
+tcp_client
+
+stream_enabled
+
+---
+
+## Mechanical Platform
+
+rotation_active
+
+rpm_actual
+
+vibration_level
+
+---
+
+# PLANNED SOFTWARE STRUCTURE
+
+SW/
+├── main.py
+├── calibration.py
+├── mpu6050.py
+├── filters.py
+├── fft.py
+├── wifi.py
+├── logging.py
+├── statistics.py
+├── config.py
+└── utils.py
+
+---
+
+Designed by S.L.O.J. member Jirka Vacek
+in collaboration with Hugo Valmont de AI
