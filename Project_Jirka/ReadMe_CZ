@@ -21,7 +21,7 @@ Každý senzor bude:
 
 - mechanicky pevně uchycen
 - tepelně stabilizován
-- umístěn na společné antivibrační platformě
+- umístěn na společné antivibrační platformě se společným vibračním kmitočtem 5 - 7 Hz
 - synchronně vzorkován
 
 Hlavní myšlenkou projektu je porovnávání chování jednotlivých os v dlouhodobém měření.
