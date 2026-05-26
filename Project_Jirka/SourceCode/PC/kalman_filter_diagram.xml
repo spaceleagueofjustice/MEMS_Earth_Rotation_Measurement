@@ -1,1 +1,165 @@
 
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="MEMS Kalman Filter">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10"
+                  guides="1" tooltips="1" connect="1"
+                  arrows="1" fold="1" page="1"
+                  pageScale="1" pageWidth="1920"
+                  pageHeight="1080">
+
+      <root>
+
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- INPUT -->
+        <mxCell id="input"
+          value="Raw MPU6050 Data&#10;gx gy gz"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="60" y="220" width="180" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- DT -->
+        <mxCell id="dt"
+          value="dt Calculation"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="320" y="220" width="140" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- PREDICTION -->
+        <mxCell id="prediction"
+          value="Prediction Step&#10;rate_unbiased = rate - bias&#10;angle += dt * rate"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="540" y="180" width="260" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- COVARIANCE -->
+        <mxCell id="covariance"
+          value="Covariance Update&#10;P Matrix Prediction"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=15;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="540" y="360" width="260" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- INNOVATION -->
+        <mxCell id="innovation"
+          value="Innovation&#10;measurement = 0&#10;innovation = -angle"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=15;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="900" y="180" width="240" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- KALMAN GAIN -->
+        <mxCell id="gain"
+          value="Kalman Gain&#10;K = P / (P + R)"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=15;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="900" y="340" width="240" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- UPDATE -->
+        <mxCell id="update"
+          value="State Update&#10;angle correction&#10;bias estimation"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=15;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="1260" y="240" width="240" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- OUTPUT -->
+        <mxCell id="output"
+          value="Filtered Output&#10;X Y Z&#10;Bias Estimation"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=16;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="1620" y="240" width="220" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- EARTH MODEL -->
+        <mxCell id="earth"
+          value="NO Earth Rotation Model&#10;NO AHRS&#10;NO Gravity Lock"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000000;fontColor=#ffffff;strokeColor=#000000;fontSize=16;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="840" y="520" width="320" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- EDGES -->
+
+        <mxCell id="e1"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;"
+          edge="1"
+          source="input"
+          target="dt"
+          parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;"
+          edge="1"
+          source="dt"
+          target="prediction"
+          parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;"
+          edge="1"
+          source="prediction"
+          target="innovation"
+          parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e4"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;"
+          edge="1"
+          source="covariance"
+          target="gain"
+          parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;"
+          edge="1"
+          source="innovation"
+          target="update"
+          parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e6"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;"
+          edge="1"
+          source="gain"
+          target="update"
+          parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e7"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;"
+          edge="1"
+          source="update"
+          target="output"
+          parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
