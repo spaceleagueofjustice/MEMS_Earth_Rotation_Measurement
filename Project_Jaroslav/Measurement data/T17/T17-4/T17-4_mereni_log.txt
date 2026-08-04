@@ -1,0 +1,2030 @@
+=== EARTH ROTATION LOG - TESTID=T17-4 (nahodna pozice i smer) ===
+=================================================================
+EARTH ROTATION MEASUREMENT - TESTID = T17-4
+NAHODNA POZICE I SMER (smer se zaznamenava, nevynucuje)
+NEMA17 + A4988 + ADXRS290 (+teplota) + MPU6050 (kontrola naklonu)
+=================================================================
+
+POZOR: pozice A (azimut 0 deg) musi byt pred spustenim nastavena
+RUCNE (osa X miri na sever), sestava vyrovnana a od ted uz s ni
+NEHYBAT. Vsechny dalsi presuny dela vyhradne motor, vzdy nejkratsi
+cestou. Motor zustava zapnuty po celou dobu behu.
+
+Initializing SPI1...
+  ADXRS290: ADI=0xad MEMS=0x1d DEV=0x92
+  ADXRS290 measurement mode ON, TSM (teplota) ON, FILTER=0x00 (raw, bez filtru)
+
+Initializing I2C0 (MPU6050)...
+  MPU6050: WHO_AM_I=0x70
+
+=================================================================
+WARM-UP: cekam na ustaleni teploty gyra pred startem mereni...
+  Prah=0.50 C/min, okno=60s, kontrola kazdych 5s, timeout=900s
+=================================================================
+  t=    0s  teplota=+23.80 C  (sbiram data...)
+  t=    5s  teplota=+23.90 C  trend(okno 5s)=+1.189 C/min
+  t=   10s  teplota=+23.80 C  trend(okno 10s)=+0.000 C/min
+  t=   15s  teplota=+23.90 C  trend(okno 15s)=+0.396 C/min
+  t=   20s  teplota=+23.90 C  trend(okno 20s)=+0.297 C/min
+  t=   25s  teplota=+23.90 C  trend(okno 25s)=+0.238 C/min
+  t=   30s  teplota=+24.00 C  trend(okno 30s)=+0.396 C/min
+
+WARM-UP OK: teplota ustalena (trend +0.396 C/min) po 30s. Startuji mereni.
+
+=================================================================
+CELKEM 150 nahodnych cyklu (pozice i smer nahodne, smer jen zaznamenan)
+AZIMUTH_STEP_DEG = 22.5  (16 moznych azimutu)
+APPROACH_OVERSHOOT_DEG = 15.0, APPROACH_SIGN = +1
+FIXNI settle = 4.0s, FIXNI trim = 50
+CABLE_SAFETY_LIMIT_DEG = 400 (tvrdy limit)
+=================================================================
+
+-----------------------------------------------------------------
+CYKLUS 1/150  ->  nahodny cilovy azimut 247.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 247.5 deg (delta=-112.5 deg, smer=CCW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41504996 gY=+0.63025000  T=+23.90C  aX=+0.057871 aY=+0.010432  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41899992 gY=+0.62709980  T=+23.93C  aX=+0.024702 aY=+0.001052  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 1 (CCW, 247.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 2/150  ->  nahodny cilovy azimut 180.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 180.0 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=-112.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41610008 gY=+0.63650000  T=+23.97C  aX=+0.043298 aY=+0.022649  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41595000 gY=+0.64474980  T=+23.99C  aX=+0.039827 aY=-0.012395  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 2 (CCW, 180.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 3/150  ->  nahodny cilovy azimut 90.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 90.0 deg (delta=-90.0 deg, smer=CCW, pozice pred presunem=-180.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42205012 gY=+0.64914980  T=+23.93C  aX=+0.024580 aY=+0.007461  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42384996 gY=+0.64064984  T=+23.97C  aX=+0.058303 aY=+0.003091  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 3 (CCW, 90.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 4/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=+135.0 deg, smer=CW, pozice pred presunem=-270.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42514992 gY=+0.63265016  T=+23.99C  aX=+0.054600 aY=+0.016641  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42569990 gY=+0.64119990  T=+23.99C  aX=+0.028093 aY=-0.006162  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 4 (CW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 5/150  ->  nahodny cilovy azimut 247.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 247.5 deg (delta=+22.5 deg, smer=CW, pozice pred presunem=-135.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41535004 gY=+0.64715000  T=+24.00C  aX=+0.057524 aY=+0.010752  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42630004 gY=+0.63499992  T=+24.00C  aX=+0.024580 aY=+0.000249  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 5 (CW, 247.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 6/150  ->  nahodny cilovy azimut 135.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 135.0 deg (delta=-112.5 deg, smer=CCW, pozice pred presunem=-112.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42179992 gY=+0.64289990  T=+24.00C  aX=+0.030925 aY=+0.018953  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41995000 gY=+0.63064990  T=+24.01C  aX=+0.052861 aY=-0.007732  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 6 (CCW, 135.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 7/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=-225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42419996 gY=+0.64250000  T=+24.00C  aX=+0.024639 aY=+0.000969  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42404980 gY=+0.63540000  T=+24.00C  aX=+0.058208 aY=+0.011106  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 7 (CCW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 8/150  ->  nahodny cilovy azimut 292.5 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni -292.5 deg by presahlo limit 400 deg. Odvijim zpet na sever (+292.5 deg)...
+  Presun na azimut 292.5 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42194992 gY=+0.63374984  T=+24.00C  aX=+0.056128 aY=-0.002864  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41940000 gY=+0.64259980  T=+24.00C  aX=+0.026182 aY=+0.014011  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 8 (CCW, 292.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 9/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=-90.0 deg, smer=CCW, pozice pred presunem=-67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41969996 gY=+0.63710000  T=+24.00C  aX=+0.050242 aY=+0.021301  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41530000 gY=+0.62855000  T=+24.00C  aX=+0.033403 aY=-0.010071  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 9 (CCW, 202.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 10/150  ->  nahodny cilovy azimut 112.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 112.5 deg (delta=-90.0 deg, smer=CCW, pozice pred presunem=-157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41774990 gY=+0.64829980  T=+23.98C  aX=+0.025466 aY=+0.014463  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42100008 gY=+0.63565000  T=+23.97C  aX=+0.056643 aY=-0.002881  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 10 (CCW, 112.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 11/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=-247.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42870000 gY=+0.63634990  T=+23.99C  aX=+0.034434 aY=+0.022239  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42105004 gY=+0.64504980  T=+24.00C  aX=+0.047502 aY=-0.011401  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 11 (CW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 12/150  ->  nahodny cilovy azimut 45.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 45.0 deg (delta=-112.5 deg, smer=CCW, pozice pred presunem=-202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42729996 gY=+0.64375000  T=+23.99C  aX=+0.026616 aY=-0.005396  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43614996 gY=+0.64304984  T=+23.93C  aX=+0.053655 aY=+0.016709  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 12 (CCW, 45.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 13/150  ->  nahodny cilovy azimut 135.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 135.0 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=-315.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41620000 gY=+0.63514990  T=+23.93C  aX=+0.030122 aY=+0.019583  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42304992 gY=+0.63665000  T=+23.92C  aX=+0.052449 aY=-0.007849  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 13 (CW, 135.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 14/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 270.0 deg (delta=+135.0 deg, smer=CW, pozice pred presunem=-225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42175008 gY=+0.64164996  T=+23.97C  aX=+0.058809 aY=+0.003499  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42764990 gY=+0.64904976  T=+23.91C  aX=+0.023826 aY=+0.007146  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 14 (CW, 270.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 15/150  ->  nahodny cilovy azimut 112.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 112.5 deg (delta=-157.5 deg, smer=CCW, pozice pred presunem=-90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43599996 gY=+0.65219984  T=+23.96C  aX=+0.025845 aY=+0.013914  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41915000 gY=+0.64135004  T=+23.89C  aX=+0.057004 aY=-0.003210  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 15 (CCW, 112.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 16/150  ->  nahodny cilovy azimut 0.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 0.0 deg (delta=-112.5 deg, smer=CCW, pozice pred presunem=-247.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41950000 gY=+0.64959984  T=+23.95C  aX=+0.038865 aY=-0.012319  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42594996 gY=+0.64484984  T=+23.92C  aX=+0.043823 aY=+0.023169  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 16 (CCW, 0.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 17/150  ->  nahodny cilovy azimut 45.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 45.0 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=-360.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42924988 gY=+0.63389984  T=+23.93C  aX=+0.025920 aY=-0.005137  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41854990 gY=+0.64149976  T=+23.89C  aX=+0.054622 aY=+0.016672  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 17 (CW, 45.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 18/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni -315.0 deg by presahlo limit 400 deg. Odvijim zpet na sever (+315.0 deg)...
+  Presun na azimut 270.0 deg (delta=-90.0 deg, smer=CCW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42069996 gY=+0.65059990  T=+23.90C  aX=+0.058040 aY=+0.003850  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42214990 gY=+0.64804980  T=+23.89C  aX=+0.023884 aY=+0.007012  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 18 (CCW, 270.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 19/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 270.0 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=-90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42124996 gY=+0.64565000  T=+23.94C  aX=+0.058394 aY=+0.003589  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41565000 gY=+0.64925004  T=+23.90C  aX=+0.023618 aY=+0.007036  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 19 (CW, 270.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 20/150  ->  nahodny cilovy azimut 112.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 112.5 deg (delta=-157.5 deg, smer=CCW, pozice pred presunem=-90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42645000 gY=+0.64784980  T=+23.80C  aX=+0.026099 aY=+0.014072  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42104990 gY=+0.65990020  T=+23.81C  aX=+0.056726 aY=-0.003215  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 20 (CCW, 112.5 deg) zapsan do CSV.
+
+[POSTUP] Dokonceno 20/150 cyklu.
+
+-----------------------------------------------------------------
+CYKLUS 21/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=-247.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42175008 gY=+0.65029990  T=+23.82C  aX=+0.050068 aY=+0.021177  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42084992 gY=+0.64799970  T=+23.83C  aX=+0.033882 aY=-0.010261  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 21 (CW, 202.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 22/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=-157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42329996 gY=+0.64500000  T=+23.80C  aX=+0.051047 aY=+0.020874  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41475000 gY=+0.64829990  T=+23.82C  aX=+0.032710 aY=-0.010344  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 22 (CW, 202.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 23/150  ->  nahodny cilovy azimut 337.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 337.5 deg (delta=+135.0 deg, smer=CW, pozice pred presunem=-157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41645016 gY=+0.65659990  T=+23.85C  aX=+0.045981 aY=-0.011909  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42014990 gY=+0.65734992  T=+23.84C  aX=+0.035935 aY=+0.022466  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 23 (CW, 337.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 24/150  ->  nahodny cilovy azimut 22.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 22.5 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=-22.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43185016 gY=+0.66044990  T=+23.80C  aX=+0.032842 aY=-0.010378  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41585000 gY=+0.66284996  T=+23.82C  aX=+0.049385 aY=+0.021213  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 24 (CW, 22.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 25/150  ->  nahodny cilovy azimut 22.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 22.5 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=+22.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43494988 gY=+0.65094970  T=+23.81C  aX=+0.032988 aY=-0.010657  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41415000 gY=+0.65859984  T=+23.80C  aX=+0.050645 aY=+0.021216  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 25 (CW, 22.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 26/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=+22.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42030012 gY=+0.65634990  T=+23.80C  aX=+0.024363 aY=-0.000288  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41890000 gY=+0.65975004  T=+23.80C  aX=+0.058115 aY=+0.009927  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 26 (CW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 27/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=+135.0 deg, smer=CW, pozice pred presunem=+67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43730000 gY=+0.63839984  T=+23.80C  aX=+0.050234 aY=+0.020933  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42575000 gY=+0.64939980  T=+23.80C  aX=+0.034629 aY=-0.010586  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 27 (CW, 202.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 28/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=-45.0 deg, smer=CCW, pozice pred presunem=+202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42469992 gY=+0.65254980  T=+23.80C  aX=+0.037053 aY=+0.022717  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42289992 gY=+0.63814990  T=+23.80C  aX=+0.046929 aY=-0.012195  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 28 (CCW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 29/150  ->  nahodny cilovy azimut 247.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 247.5 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=+157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42304992 gY=+0.64555000  T=+23.80C  aX=+0.057937 aY=+0.010835  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43315000 gY=+0.64764980  T=+23.80C  aX=+0.025217 aY=-0.000359  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 29 (CW, 247.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 30/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=-22.5 deg, smer=CCW, pozice pred presunem=+247.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42725004 gY=+0.65104980  T=+23.80C  aX=+0.054507 aY=+0.016265  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42535004 gY=+0.65665000  T=+23.80C  aX=+0.028140 aY=-0.006448  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 30 (CCW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 31/150  ->  nahodny cilovy azimut 337.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 337.5 deg (delta=+112.5 deg, smer=CW, pozice pred presunem=+225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43284990 gY=+0.64764980  T=+23.80C  aX=+0.046621 aY=-0.011951  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42865004 gY=+0.65464976  T=+23.81C  aX=+0.036423 aY=+0.022297  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 31 (CW, 337.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 32/150  ->  nahodny cilovy azimut 90.0 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni 337.5 deg by presahlo limit 400 deg. Odvijim zpet na sever (-337.5 deg)...
+  Presun na azimut 90.0 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42629996 gY=+0.64915000  T=+23.80C  aX=+0.023857 aY=+0.007422  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43184988 gY=+0.65369992  T=+23.83C  aX=+0.058962 aY=+0.003669  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 32 (CW, 90.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 33/150  ->  nahodny cilovy azimut 180.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 180.0 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=+90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42189990 gY=+0.64664980  T=+23.80C  aX=+0.043447 aY=+0.022957  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41234988 gY=+0.65770008  T=+23.80C  aX=+0.040286 aY=-0.012202  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 33 (CW, 180.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 34/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=+180.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42344980 gY=+0.65209996  T=+23.78C  aX=+0.054727 aY=+0.016711  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43205010 gY=+0.65755000  T=+23.80C  aX=+0.028010 aY=-0.005916  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 34 (CW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 35/150  ->  nahodny cilovy azimut 22.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 22.5 deg (delta=+157.5 deg, smer=CW, pozice pred presunem=+225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42610000 gY=+0.65674996  T=+23.78C  aX=+0.034417 aY=-0.010649  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42004992 gY=+0.65954990  T=+23.74C  aX=+0.050867 aY=+0.020701  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 35 (CW, 22.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 36/150  ->  nahodny cilovy azimut 337.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 337.5 deg (delta=-45.0 deg, smer=CCW, pozice pred presunem=+382.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42934992 gY=+0.64835000  T=+23.77C  aX=+0.046597 aY=-0.011599  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42505008 gY=+0.65920010  T=+23.80C  aX=+0.036572 aY=+0.022263  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 36 (CCW, 337.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 37/150  ->  nahodny cilovy azimut 90.0 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni 337.5 deg by presahlo limit 400 deg. Odvijim zpet na sever (-337.5 deg)...
+  Presun na azimut 90.0 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42570008 gY=+0.65744990  T=+23.80C  aX=+0.023770 aY=+0.007900  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41829990 gY=+0.65574976  T=+23.80C  aX=+0.059268 aY=+0.004158  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 37 (CW, 90.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 38/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=-22.5 deg, smer=CCW, pozice pred presunem=+90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43899996 gY=+0.65429984  T=+23.80C  aX=+0.024807 aY=+0.000435  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42545008 gY=+0.65045000  T=+23.76C  aX=+0.058352 aY=+0.010522  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 38 (CCW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 39/150  ->  nahodny cilovy azimut 180.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 180.0 deg (delta=+112.5 deg, smer=CW, pozice pred presunem=+67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43339992 gY=+0.65659992  T=+23.77C  aX=+0.043467 aY=+0.023320  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42594990 gY=+0.65489984  T=+23.74C  aX=+0.040596 aY=-0.012732  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 39 (CW, 180.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 40/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=+22.5 deg, smer=CW, pozice pred presunem=+180.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41725008 gY=+0.65374980  T=+23.78C  aX=+0.051042 aY=+0.020796  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43024990 gY=+0.65835000  T=+23.76C  aX=+0.034512 aY=-0.010305  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 40 (CW, 202.5 deg) zapsan do CSV.
+
+[POSTUP] Dokonceno 40/150 cyklu.
+
+-----------------------------------------------------------------
+CYKLUS 41/150  ->  nahodny cilovy azimut 315.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 315.0 deg (delta=+112.5 deg, smer=CW, pozice pred presunem=+202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42394996 gY=+0.65359990  T=+23.73C  aX=+0.052126 aY=-0.008875  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41895004 gY=+0.66255032  T=+23.72C  aX=+0.030457 aY=+0.018994  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 41 (CW, 315.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 42/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni 315.0 deg by presahlo limit 400 deg. Odvijim zpet na sever (-315.0 deg)...
+  Presun na azimut 67.5 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42065012 gY=+0.65604990  T=+23.75C  aX=+0.024482 aY=+0.000781  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42595004 gY=+0.65950008  T=+23.69C  aX=+0.058271 aY=+0.010239  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 42 (CW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 43/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=+157.5 deg, smer=CW, pozice pred presunem=+67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41505000 gY=+0.65399984  T=+23.74C  aX=+0.055144 aY=+0.017231  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42524992 gY=+0.66240010  T=+23.73C  aX=+0.028352 aY=-0.005947  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 43 (CW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 44/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=+225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42664996 gY=+0.65739990  T=+23.70C  aX=+0.055542 aY=+0.016438  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43819996 gY=+0.65930010  T=+23.73C  aX=+0.027908 aY=-0.006011  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 44 (CW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 45/150  ->  nahodny cilovy azimut 135.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 135.0 deg (delta=-90.0 deg, smer=CCW, pozice pred presunem=+225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41165010 gY=+0.66155000  T=+23.70C  aX=+0.029875 aY=+0.019255  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41889992 gY=+0.65935000  T=+23.68C  aX=+0.052329 aY=-0.008394  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 45 (CCW, 135.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 46/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=+135.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43160000 gY=+0.65529990  T=+23.75C  aX=+0.049873 aY=+0.020715  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43260000 gY=+0.66070010  T=+23.68C  aX=+0.033818 aY=-0.011050  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 46 (CW, 202.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 47/150  ->  nahodny cilovy azimut 45.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 45.0 deg (delta=-157.5 deg, smer=CCW, pozice pred presunem=+202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43094992 gY=+0.66034990  T=+23.71C  aX=+0.027109 aY=-0.005574  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42409996 gY=+0.65844992  T=+23.73C  aX=+0.055081 aY=+0.016335  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 47 (CCW, 45.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 48/150  ->  nahodny cilovy azimut 45.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 45.0 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=+45.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42009992 gY=+0.66435016  T=+23.64C  aX=+0.026284 aY=-0.005708  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41735000 gY=+0.66435016  T=+23.70C  aX=+0.055754 aY=+0.016621  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 48 (CW, 45.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 49/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=+112.5 deg, smer=CW, pozice pred presunem=+45.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42404988 gY=+0.65514992  T=+23.65C  aX=+0.035916 aY=+0.022393  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43274992 gY=+0.65239984  T=+23.66C  aX=+0.047253 aY=-0.011812  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 49 (CW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 50/150  ->  nahodny cilovy azimut 292.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 292.5 deg (delta=+135.0 deg, smer=CW, pozice pred presunem=+157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42099992 gY=+0.65504990  T=+23.67C  aX=+0.057107 aY=-0.003130  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42585000 gY=+0.66025000  T=+23.65C  aX=+0.026646 aY=+0.013613  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 50 (CW, 292.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 51/150  ->  nahodny cilovy azimut 337.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 337.5 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=+292.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41620000 gY=+0.65144976  T=+23.69C  aX=+0.047363 aY=-0.012092  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42750004 gY=+0.65940010  T=+23.66C  aX=+0.036555 aY=+0.022422  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 51 (CW, 337.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 52/150  ->  nahodny cilovy azimut 337.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 337.5 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=+337.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41824996 gY=+0.66020020  T=+23.66C  aX=+0.046846 aY=-0.011763  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42269996 gY=+0.65049980  T=+23.68C  aX=+0.036238 aY=+0.022241  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 52 (CW, 337.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 53/150  ->  nahodny cilovy azimut 112.5 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni 337.5 deg by presahlo limit 400 deg. Odvijim zpet na sever (-337.5 deg)...
+  Presun na azimut 112.5 deg (delta=+112.5 deg, smer=CW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42279992 gY=+0.65299992  T=+23.66C  aX=+0.026274 aY=+0.014529  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41939984 gY=+0.65665000  T=+23.64C  aX=+0.057034 aY=-0.003066  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 53 (CW, 112.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 54/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=+112.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41150000 gY=+0.64939992  T=+23.68C  aX=+0.037861 aY=+0.022622  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42414996 gY=+0.65269990  T=+23.64C  aX=+0.046409 aY=-0.012056  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 54 (CW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 55/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=+157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41809996 gY=+0.65860004  T=+23.62C  aX=+0.037358 aY=+0.022681  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42215000 gY=+0.65114980  T=+23.55C  aX=+0.047014 aY=-0.011428  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 55 (CW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 56/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 270.0 deg (delta=+112.5 deg, smer=CW, pozice pred presunem=+157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41639992 gY=+0.66700000  T=+23.57C  aX=+0.059309 aY=+0.003704  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42995000 gY=+0.65449992  T=+23.58C  aX=+0.024641 aY=+0.007163  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 56 (CW, 270.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 57/150  ->  nahodny cilovy azimut 0.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 0.0 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=+270.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42445000 gY=+0.65620008  T=+23.57C  aX=+0.040647 aY=-0.012373  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+    [WARN] I2C chyba pri cteni MPU6050 ([Errno 5] EIO), pokus 1/5
+    [WARN] I2C chyba pri cteni MPU6050 ([Errno 110] ETIMEDOUT), pokus 2/5
+  Pozice C: gX=-0.42379992 gY=+0.66150016  T=+23.57C  aX=+0.042639 aY=+0.022798  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 57 (CW, 0.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 58/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni 360.0 deg by presahlo limit 400 deg. Odvijim zpet na sever (-360.0 deg)...
+  Presun na azimut 67.5 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42979992 gY=+0.66010016  T=+23.57C  aX=+0.024338 aY=+0.000452  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42279990 gY=+0.65640016  T=+23.64C  aX=+0.057495 aY=+0.010225  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 58 (CW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 59/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=+157.5 deg, smer=CW, pozice pred presunem=+67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41130020 gY=+0.64904980  T=+23.54C  aX=+0.054365 aY=+0.017605  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41810010 gY=+0.65964990  T=+23.63C  aX=+0.028889 aY=-0.005762  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 59 (CW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 60/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 270.0 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=+225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41894984 gY=+0.65704990  T=+23.56C  aX=+0.059114 aY=+0.003662  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43170000 gY=+0.65180000  T=+23.63C  aX=+0.023865 aY=+0.007224  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 60 (CW, 270.0 deg) zapsan do CSV.
+
+[POSTUP] Dokonceno 60/150 cyklu.
+
+-----------------------------------------------------------------
+CYKLUS 61/150  ->  nahodny cilovy azimut 247.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 247.5 deg (delta=-22.5 deg, smer=CCW, pozice pred presunem=+270.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42710008 gY=+0.65314984  T=+23.61C  aX=+0.058540 aY=+0.010012  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42084992 gY=+0.65845000  T=+23.58C  aX=+0.026904 aY=+0.000503  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 61 (CCW, 247.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 62/150  ->  nahodny cilovy azimut 45.0 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni 247.5 deg by presahlo limit 400 deg. Odvijim zpet na sever (-247.5 deg)...
+  Presun na azimut 45.0 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42454988 gY=+0.66765004  T=+23.68C  aX=+0.027173 aY=-0.005510  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41705000 gY=+0.65784996  T=+23.64C  aX=+0.055449 aY=+0.016946  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 62 (CW, 45.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 63/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=-180.0 deg, smer=CCW, pozice pred presunem=+45.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42069996 gY=+0.63884984  T=+23.55C  aX=+0.054258 aY=+0.016633  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41779996 gY=+0.65819984  T=+23.67C  aX=+0.027593 aY=-0.005396  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 63 (CCW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 64/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=-135.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42269992 gY=+0.65739984  T=+23.64C  aX=+0.036770 aY=+0.023062  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41195000 gY=+0.65475000  T=+23.64C  aX=+0.046069 aY=-0.011526  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 64 (CCW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 65/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 270.0 deg (delta=+112.5 deg, smer=CW, pozice pred presunem=-202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42725004 gY=+0.65449976  T=+23.68C  aX=+0.058196 aY=+0.003779  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42274996 gY=+0.66600008  T=+23.64C  aX=+0.022922 aY=+0.007261  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 65 (CW, 270.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 66/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 270.0 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=-90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42029984 gY=+0.64889970  T=+23.66C  aX=+0.058760 aY=+0.003726  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42030010 gY=+0.66049992  T=+23.67C  aX=+0.023850 aY=+0.007312  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 66 (CW, 270.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 67/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=-112.5 deg, smer=CCW, pozice pred presunem=-90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41594996 gY=+0.65309990  T=+23.68C  aX=+0.036567 aY=+0.023113  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.40515020 gY=+0.66135000  T=+23.69C  aX=+0.046763 aY=-0.011541  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 67 (CCW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 68/150  ->  nahodny cilovy azimut 292.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 292.5 deg (delta=+135.0 deg, smer=CW, pozice pred presunem=-202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42455004 gY=+0.65955000  T=+23.64C  aX=+0.056985 aY=-0.002710  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42300016 gY=+0.65349980  T=+23.63C  aX=+0.027485 aY=+0.013777  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 68 (CW, 292.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 69/150  ->  nahodny cilovy azimut 45.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 45.0 deg (delta=+112.5 deg, smer=CW, pozice pred presunem=-67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42515004 gY=+0.65324990  T=+23.59C  aX=+0.026548 aY=-0.005354  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42829992 gY=+0.64889980  T=+23.60C  aX=+0.054233 aY=+0.016616  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 69 (CW, 45.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 70/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 270.0 deg (delta=-135.0 deg, smer=CCW, pozice pred presunem=+45.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42105000 gY=+0.65239980  T=+23.60C  aX=+0.058982 aY=+0.003716  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41205016 gY=+0.65769992  T=+23.61C  aX=+0.024480 aY=+0.007715  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 70 (CCW, 270.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 71/150  ->  nahodny cilovy azimut 22.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 22.5 deg (delta=+112.5 deg, smer=CW, pozice pred presunem=-90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42975000 gY=+0.66100020  T=+23.56C  aX=+0.033523 aY=-0.010054  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41999990 gY=+0.66089992  T=+23.57C  aX=+0.050498 aY=+0.021016  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 71 (CW, 22.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 72/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=+135.0 deg, smer=CW, pozice pred presunem=+22.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42739990 gY=+0.64339996  T=+23.56C  aX=+0.037742 aY=+0.022915  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42389976 gY=+0.66490010  T=+23.53C  aX=+0.048542 aY=-0.011399  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 72 (CW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 73/150  ->  nahodny cilovy azimut 90.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 90.0 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=+157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41810010 gY=+0.65865000  T=+23.53C  aX=+0.024131 aY=+0.007500  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41855000 gY=+0.65244996  T=+23.54C  aX=+0.059534 aY=+0.002993  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 73 (CCW, 90.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 74/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=-22.5 deg, smer=CCW, pozice pred presunem=+90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42135004 gY=+0.66029990  T=+23.61C  aX=+0.025000 aY=+0.000913  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41645008 gY=+0.64849984  T=+23.57C  aX=+0.058057 aY=+0.010962  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 74 (CCW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 75/150  ->  nahodny cilovy azimut 22.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 22.5 deg (delta=-45.0 deg, smer=CCW, pozice pred presunem=+67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41625004 gY=+0.66299984  T=+23.56C  aX=+0.032937 aY=-0.010313  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42135004 gY=+0.65989984  T=+23.51C  aX=+0.050652 aY=+0.020759  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 75 (CCW, 22.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 76/150  ->  nahodny cilovy azimut 90.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 90.0 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=+22.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42085020 gY=+0.66240008  T=+23.54C  aX=+0.023826 aY=+0.007485  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42025012 gY=+0.66899984  T=+23.60C  aX=+0.059116 aY=+0.003826  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 76 (CW, 90.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 77/150  ->  nahodny cilovy azimut 22.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 22.5 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=+90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42310000 gY=+0.65254990  T=+23.58C  aX=+0.032893 aY=-0.010200  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41719992 gY=+0.66700000  T=+23.59C  aX=+0.050618 aY=+0.020884  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 77 (CCW, 22.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 78/150  ->  nahodny cilovy azimut 22.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 22.5 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=+22.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42940010 gY=+0.65979976  T=+23.56C  aX=+0.032678 aY=-0.009966  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42240008 gY=+0.66370010  T=+23.63C  aX=+0.050728 aY=+0.021348  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 78 (CW, 22.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 79/150  ->  nahodny cilovy azimut 337.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 337.5 deg (delta=-45.0 deg, smer=CCW, pozice pred presunem=+22.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43154988 gY=+0.66544990  T=+23.53C  aX=+0.046160 aY=-0.011138  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42445004 gY=+0.66710010  T=+23.61C  aX=+0.037053 aY=+0.022771  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 79 (CCW, 337.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 80/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=-135.0 deg, smer=CCW, pozice pred presunem=-22.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42274990 gY=+0.66175020  T=+23.56C  aX=+0.049524 aY=+0.020908  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42764992 gY=+0.66055000  T=+23.61C  aX=+0.032900 aY=-0.010212  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 80 (CCW, 202.5 deg) zapsan do CSV.
+
+[POSTUP] Dokonceno 80/150 cyklu.
+
+-----------------------------------------------------------------
+CYKLUS 81/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=-45.0 deg, smer=CCW, pozice pred presunem=-157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41050010 gY=+0.66634990  T=+23.55C  aX=+0.036863 aY=+0.023140  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42145000 gY=+0.67100008  T=+23.58C  aX=+0.046531 aY=-0.011440  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 81 (CCW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 82/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=-202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42274996 gY=+0.67410010  T=+23.59C  aX=+0.054189 aY=+0.016729  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43425008 gY=+0.66259990  T=+23.58C  aX=+0.027339 aY=-0.005632  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 82 (CW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 83/150  ->  nahodny cilovy azimut 135.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 135.0 deg (delta=-90.0 deg, smer=CCW, pozice pred presunem=-135.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42054990 gY=+0.66420008  T=+23.55C  aX=+0.029534 aY=+0.020039  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43535004 gY=+0.65244984  T=+23.53C  aX=+0.052200 aY=-0.008640  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 83 (CCW, 135.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 84/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=-225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42909990 gY=+0.67330000  T=+23.54C  aX=+0.048989 aY=+0.021462  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42464996 gY=+0.66535016  T=+23.59C  aX=+0.032256 aY=-0.010083  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 84 (CW, 202.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 85/150  ->  nahodny cilovy azimut 90.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 90.0 deg (delta=-112.5 deg, smer=CCW, pozice pred presunem=-157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42559980 gY=+0.65765000  T=+23.59C  aX=+0.023696 aY=+0.008342  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42394996 gY=+0.65309990  T=+23.64C  aX=+0.059082 aY=+0.003479  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 85 (CCW, 90.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 86/150  ->  nahodny cilovy azimut 0.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 0.0 deg (delta=-90.0 deg, smer=CCW, pozice pred presunem=-270.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42879972 gY=+0.65979990  T=+23.59C  aX=+0.037896 aY=-0.012363  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42265000 gY=+0.67340000  T=+23.59C  aX=+0.042573 aY=+0.023469  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 86 (CCW, 0.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 87/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni -360.0 deg by presahlo limit 400 deg. Odvijim zpet na sever (+360.0 deg)...
+  Presun na azimut 202.5 deg (delta=-157.5 deg, smer=CCW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42524988 gY=+0.65159990  T=+23.51C  aX=+0.050325 aY=+0.021189  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42674992 gY=+0.66244980  T=+23.54C  aX=+0.033162 aY=-0.010308  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 87 (CCW, 202.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 88/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=-135.0 deg, smer=CCW, pozice pred presunem=-157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42519996 gY=+0.65899984  T=+23.60C  aX=+0.024978 aY=+0.000723  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41275012 gY=+0.66174996  T=+23.56C  aX=+0.056938 aY=+0.011372  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 88 (CCW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 89/150  ->  nahodny cilovy azimut 337.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 337.5 deg (delta=-90.0 deg, smer=CCW, pozice pred presunem=-292.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42909990 gY=+0.65429980  T=+23.63C  aX=+0.045000 aY=-0.011519  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42684992 gY=+0.65494990  T=+23.57C  aX=+0.036526 aY=+0.023203  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 89 (CCW, 337.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 90/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni -382.5 deg by presahlo limit 400 deg. Odvijim zpet na sever (+382.5 deg)...
+  Presun na azimut 157.5 deg (delta=+157.5 deg, smer=CW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41525024 gY=+0.66165008  T=+23.65C  aX=+0.036787 aY=+0.022173  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42659992 gY=+0.65735000  T=+23.68C  aX=+0.047200 aY=-0.011714  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 90 (CW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 91/150  ->  nahodny cilovy azimut 112.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 112.5 deg (delta=-45.0 deg, smer=CCW, pozice pred presunem=+157.5 deg, anti-backlash aktivni)
+    [WARN] I2C chyba pri cteni MPU6050 ([Errno 5] EIO), pokus 1/5
+    [WARN] I2C chyba pri cteni MPU6050 ([Errno 110] ETIMEDOUT), pokus 2/5
+  Pozice A: gX=-0.41954996 gY=+0.67380008  T=+23.64C  aX=+0.026235 aY=+0.014070  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42604996 gY=+0.65154976  T=+23.65C  aX=+0.056929 aY=-0.003049  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 91 (CCW, 112.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 92/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=+112.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42235004 gY=+0.67685020  T=+23.64C  aX=+0.050520 aY=+0.021013  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41930004 gY=+0.66355016  T=+23.67C  aX=+0.034143 aY=-0.010347  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 92 (CW, 202.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 93/150  ->  nahodny cilovy azimut 135.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 135.0 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=+202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41100000 gY=+0.67625016  T=+23.65C  aX=+0.030764 aY=+0.019299  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42034996 gY=+0.65519980  T=+23.70C  aX=+0.052346 aY=-0.008271  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 93 (CCW, 135.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 94/150  ->  nahodny cilovy azimut 247.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 247.5 deg (delta=+112.5 deg, smer=CW, pozice pred presunem=+135.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.40785030 gY=+0.66334990  T=+23.68C  aX=+0.059116 aY=+0.010566  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42364996 gY=+0.67184990  T=+23.66C  aX=+0.027524 aY=+0.000547  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 94 (CW, 247.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 95/150  ->  nahodny cilovy azimut 112.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 112.5 deg (delta=-135.0 deg, smer=CCW, pozice pred presunem=+247.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42334996 gY=+0.65664976  T=+23.63C  aX=+0.026235 aY=+0.014460  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+    [WARN] I2C chyba pri cteni MPU6050 ([Errno 5] EIO), pokus 1/5
+  Pozice C: gX=-0.41769992 gY=+0.65699992  T=+23.64C  aX=+0.057390 aY=-0.002695  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 95 (CCW, 112.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 96/150  ->  nahodny cilovy azimut 180.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 180.0 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=+112.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42165000 gY=+0.66324980  T=+23.63C  aX=+0.043428 aY=+0.022874  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42065010 gY=+0.66875004  T=+23.63C  aX=+0.040806 aY=-0.011914  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 96 (CW, 180.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 97/150  ->  nahodny cilovy azimut 45.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 45.0 deg (delta=-135.0 deg, smer=CCW, pozice pred presunem=+180.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42774990 gY=+0.66865004  T=+23.59C  aX=+0.028325 aY=-0.005862  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42754990 gY=+0.65769990  T=+23.51C  aX=+0.055623 aY=+0.016895  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 97 (CCW, 45.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 98/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=-180.0 deg, smer=CCW, pozice pred presunem=+45.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43189990 gY=+0.65789984  T=+23.52C  aX=+0.054819 aY=+0.017417  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41819992 gY=+0.67540010  T=+23.54C  aX=+0.027390 aY=-0.004971  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 98 (CCW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 99/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=-135.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41875004 gY=+0.66024992  T=+23.57C  aX=+0.036052 aY=+0.022969  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43055000 gY=+0.67435020  T=+23.54C  aX=+0.046204 aY=-0.011641  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 99 (CCW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 100/150  ->  nahodny cilovy azimut 315.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 315.0 deg (delta=+157.5 deg, smer=CW, pozice pred presunem=-202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43329984 gY=+0.67495020  T=+23.54C  aX=+0.052820 aY=-0.008384  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42254992 gY=+0.66955020  T=+23.56C  aX=+0.030139 aY=+0.019553  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 100 (CW, 315.0 deg) zapsan do CSV.
+
+[POSTUP] Dokonceno 100/150 cyklu.
+
+-----------------------------------------------------------------
+CYKLUS 101/150  ->  nahodny cilovy azimut 0.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 0.0 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=-45.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43124992 gY=+0.66214996  T=+23.56C  aX=+0.039753 aY=-0.011326  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42339992 gY=+0.66300010  T=+23.55C  aX=+0.044060 aY=+0.022878  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 101 (CW, 0.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 102/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43615000 gY=+0.66154976  T=+23.53C  aX=+0.025432 aY=+0.000342  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42454990 gY=+0.65979992  T=+23.54C  aX=+0.058750 aY=+0.010410  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 102 (CW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 103/150  ->  nahodny cilovy azimut 90.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 90.0 deg (delta=+22.5 deg, smer=CW, pozice pred presunem=+67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42669992 gY=+0.65909980  T=+23.55C  aX=+0.023818 aY=+0.007527  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43125008 gY=+0.66865004  T=+23.58C  aX=+0.059746 aY=+0.003176  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 103 (CW, 90.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 104/150  ->  nahodny cilovy azimut 135.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 135.0 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=+90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43090004 gY=+0.66560010  T=+23.53C  aX=+0.030859 aY=+0.019470  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43140012 gY=+0.66205024  T=+23.60C  aX=+0.053218 aY=-0.008284  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 104 (CW, 135.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 105/150  ->  nahodny cilovy azimut 112.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 112.5 deg (delta=-22.5 deg, smer=CCW, pozice pred presunem=+135.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42839992 gY=+0.66759984  T=+23.51C  aX=+0.026487 aY=+0.014272  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42974992 gY=+0.66960008  T=+23.52C  aX=+0.056958 aY=-0.003140  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 105 (CCW, 112.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 106/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=+112.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43274990 gY=+0.66525020  T=+23.50C  aX=+0.051431 aY=+0.020964  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42735004 gY=+0.66815000  T=+23.52C  aX=+0.034778 aY=-0.010212  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 106 (CW, 202.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 107/150  ->  nahodny cilovy azimut 292.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 292.5 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=+202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41815004 gY=+0.66534996  T=+23.50C  aX=+0.057412 aY=-0.002979  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42465000 gY=+0.66890010  T=+23.50C  aX=+0.027820 aY=+0.013542  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 107 (CW, 292.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 108/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni 292.5 deg by presahlo limit 400 deg. Odvijim zpet na sever (-292.5 deg)...
+  Presun na azimut 67.5 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42509996 gY=+0.66630000  T=+23.53C  aX=+0.024734 aY=+0.000720  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42895000 gY=+0.66859984  T=+23.52C  aX=+0.058779 aY=+0.010444  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 108 (CW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 109/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=+157.5 deg, smer=CW, pozice pred presunem=+67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41490012 gY=+0.67735040  T=+23.52C  aX=+0.055718 aY=+0.016572  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42050004 gY=+0.67015004  T=+23.56C  aX=+0.028628 aY=-0.005322  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 109 (CW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 110/150  ->  nahodny cilovy azimut 247.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 247.5 deg (delta=+22.5 deg, smer=CW, pozice pred presunem=+225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41914996 gY=+0.66640000  T=+23.61C  aX=+0.058311 aY=+0.009927  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41550004 gY=+0.65779996  T=+23.50C  aX=+0.026445 aY=+0.000645  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 110 (CW, 247.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 111/150  ->  nahodny cilovy azimut 337.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 337.5 deg (delta=+90.0 deg, smer=CW, pozice pred presunem=+247.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41960000 gY=+0.65645004  T=+23.52C  aX=+0.047288 aY=-0.011494  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43009988 gY=+0.66804992  T=+23.55C  aX=+0.037307 aY=+0.022634  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 111 (CW, 337.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 112/150  ->  nahodny cilovy azimut 292.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 292.5 deg (delta=-45.0 deg, smer=CCW, pozice pred presunem=+337.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41980000 gY=+0.66755016  T=+23.57C  aX=+0.057053 aY=-0.003027  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42285016 gY=+0.66790000  T=+23.55C  aX=+0.027190 aY=+0.013491  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 112 (CCW, 292.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 113/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=-135.0 deg, smer=CCW, pozice pred presunem=+292.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.40980008 gY=+0.67090010  T=+23.51C  aX=+0.037429 aY=+0.022625  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43060004 gY=+0.66790000  T=+23.50C  aX=+0.048003 aY=-0.011860  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 113 (CCW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 114/150  ->  nahodny cilovy azimut 0.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 0.0 deg (delta=-157.5 deg, smer=CCW, pozice pred presunem=+157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42704988 gY=+0.67730000  T=+23.50C  aX=+0.039062 aY=-0.012170  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41920012 gY=+0.67045000  T=+23.52C  aX=+0.043152 aY=+0.023191  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 114 (CCW, 0.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 115/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42710008 gY=+0.66289990  T=+23.52C  aX=+0.024822 aY=+0.000222  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42079990 gY=+0.66079990  T=+23.51C  aX=+0.057776 aY=+0.010833  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 115 (CW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 116/150  ->  nahodny cilovy azimut 45.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 45.0 deg (delta=-22.5 deg, smer=CCW, pozice pred presunem=+67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43144990 gY=+0.67250024  T=+23.50C  aX=+0.027546 aY=-0.005762  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43115004 gY=+0.65914976  T=+23.50C  aX=+0.055476 aY=+0.016738  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 116 (CCW, 45.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 117/150  ->  nahodny cilovy azimut 45.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 45.0 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=+45.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42949990 gY=+0.67110010  T=+23.47C  aX=+0.028123 aY=-0.005698  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42019984 gY=+0.66815010  T=+23.50C  aX=+0.054966 aY=+0.017202  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 117 (CW, 45.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 118/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=-180.0 deg, smer=CCW, pozice pred presunem=+45.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42089990 gY=+0.67340010  T=+23.49C  aX=+0.054480 aY=+0.017898  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42950004 gY=+0.67490010  T=+23.46C  aX=+0.029438 aY=-0.006648  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 118 (CCW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 119/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=-135.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42174992 gY=+0.66760010  T=+23.47C  aX=+0.054578 aY=+0.017268  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43064992 gY=+0.67960030  T=+23.48C  aX=+0.028728 aY=-0.006487  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 119 (CW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 120/150  ->  nahodny cilovy azimut 0.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 0.0 deg (delta=+135.0 deg, smer=CW, pozice pred presunem=-135.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43404996 gY=+0.67975016  T=+23.46C  aX=+0.041128 aY=-0.012131  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41705000 gY=+0.66940010  T=+23.47C  aX=+0.042812 aY=+0.023765  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 120 (CW, 0.0 deg) zapsan do CSV.
+
+[POSTUP] Dokonceno 120/150 cyklu.
+
+-----------------------------------------------------------------
+CYKLUS 121/150  ->  nahodny cilovy azimut 180.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 180.0 deg (delta=-180.0 deg, smer=CCW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43294992 gY=+0.66850008  T=+23.45C  aX=+0.041895 aY=+0.023499  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41734992 gY=+0.68175010  T=+23.48C  aX=+0.040205 aY=-0.012009  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 121 (CCW, 180.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 122/150  ->  nahodny cilovy azimut 202.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 202.5 deg (delta=+22.5 deg, smer=CW, pozice pred presunem=-180.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41679996 gY=+0.67320000  T=+23.47C  aX=+0.049382 aY=+0.022034  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43220012 gY=+0.68000008  T=+23.38C  aX=+0.034404 aY=-0.010510  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 122 (CW, 202.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 123/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=-135.0 deg, smer=CCW, pozice pred presunem=-157.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42965000 gY=+0.68304990  T=+23.48C  aX=+0.024067 aY=-0.000056  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42419976 gY=+0.67340016  T=+23.38C  aX=+0.057173 aY=+0.012700  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 123 (CCW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 124/150  ->  nahodny cilovy azimut 337.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 337.5 deg (delta=-90.0 deg, smer=CCW, pozice pred presunem=-292.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42805000 gY=+0.67705020  T=+23.39C  aX=+0.048772 aY=-0.010913  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43935010 gY=+0.67390010  T=+23.44C  aX=+0.035588 aY=+0.022954  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 124 (CCW, 337.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 125/150  ->  nahodny cilovy azimut 135.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 135.0 deg (delta=+157.5 deg, smer=CW, pozice pred presunem=-382.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42145008 gY=+0.67795040  T=+23.35C  aX=+0.028860 aY=+0.018760  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42874990 gY=+0.66350000  T=+23.33C  aX=+0.053755 aY=-0.007349  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 125 (CW, 135.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 126/150  ->  nahodny cilovy azimut 0.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 0.0 deg (delta=-135.0 deg, smer=CCW, pozice pred presunem=-225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42359992 gY=+0.66890024  T=+23.41C  aX=+0.039871 aY=-0.011768  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43169990 gY=+0.67774990  T=+23.31C  aX=+0.042415 aY=+0.023457  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 126 (CCW, 0.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 127/150  ->  nahodny cilovy azimut 247.5 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni -360.0 deg by presahlo limit 400 deg. Odvijim zpet na sever (+360.0 deg)...
+  Presun na azimut 247.5 deg (delta=-112.5 deg, smer=CCW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42195004 gY=+0.66400010  T=+23.30C  aX=+0.057612 aY=+0.012297  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43420004 gY=+0.67825016  T=+23.30C  aX=+0.025034 aY=-0.000500  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 127 (CCW, 247.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 128/150  ->  nahodny cilovy azimut 180.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 180.0 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=-112.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43219990 gY=+0.68265010  T=+23.30C  aX=+0.040811 aY=+0.023999  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43099992 gY=+0.68645010  T=+23.30C  aX=+0.041523 aY=-0.012827  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 128 (CCW, 180.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 129/150  ->  nahodny cilovy azimut 135.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 135.0 deg (delta=-45.0 deg, smer=CCW, pozice pred presunem=-180.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.41735024 gY=+0.68215010  T=+23.30C  aX=+0.027629 aY=+0.019131  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41929990 gY=+0.67690010  T=+23.29C  aX=+0.054409 aY=-0.007202  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 129 (CCW, 135.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 130/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=-225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43284990 gY=+0.68954990  T=+23.27C  aX=+0.024688 aY=-0.000020  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42920004 gY=+0.68860024  T=+23.28C  aX=+0.058813 aY=+0.012375  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 130 (CCW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 131/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=+0.0 deg, smer=CW, pozice pred presunem=-292.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42194990 gY=+0.67325000  T=+23.18C  aX=+0.025181 aY=+0.000627  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42750016 gY=+0.67370030  T=+23.17C  aX=+0.058289 aY=+0.012368  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 131 (CW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 132/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni -292.5 deg by presahlo limit 400 deg. Odvijim zpet na sever (+292.5 deg)...
+  Presun na azimut 270.0 deg (delta=-90.0 deg, smer=CCW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42459990 gY=+0.69039976  T=+23.17C  aX=+0.059971 aY=+0.005120  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42470008 gY=+0.69080000  T=+23.12C  aX=+0.024678 aY=+0.006760  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 132 (CCW, 270.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 133/150  ->  nahodny cilovy azimut 337.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 337.5 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=-90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42829990 gY=+0.68430020  T=+23.17C  aX=+0.048293 aY=-0.010598  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41624992 gY=+0.68510020  T=+23.17C  aX=+0.037288 aY=+0.022266  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 133 (CW, 337.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 134/150  ->  nahodny cilovy azimut 180.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 180.0 deg (delta=-157.5 deg, smer=CCW, pozice pred presunem=-22.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42730010 gY=+0.69795040  T=+23.15C  aX=+0.042056 aY=+0.024133  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43170004 gY=+0.69305020  T=+23.14C  aX=+0.041694 aY=-0.012109  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 134 (CCW, 180.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 135/150  ->  nahodny cilovy azimut 225.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 225.0 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=-180.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42714984 gY=+0.69215030  T=+23.09C  aX=+0.054106 aY=+0.018142  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42809990 gY=+0.68630000  T=+23.08C  aX=+0.028792 aY=-0.006409  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 135 (CW, 225.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 136/150  ->  nahodny cilovy azimut 292.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 292.5 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=-135.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42189996 gY=+0.68899990  T=+23.08C  aX=+0.058264 aY=-0.001577  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42129996 gY=+0.68575010  T=+23.09C  aX=+0.024663 aY=+0.013188  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 136 (CW, 292.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 137/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 270.0 deg (delta=-22.5 deg, smer=CCW, pozice pred presunem=-67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42884990 gY=+0.69394976  T=+23.12C  aX=+0.059053 aY=+0.005059  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43255000 gY=+0.69095000  T=+23.13C  aX=+0.023789 aY=+0.006956  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 137 (CCW, 270.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 138/150  ->  nahodny cilovy azimut 112.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 112.5 deg (delta=-157.5 deg, smer=CCW, pozice pred presunem=-90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42349996 gY=+0.70285032  T=+23.06C  aX=+0.024333 aY=+0.013855  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42689988 gY=+0.68570008  T=+23.06C  aX=+0.057534 aY=-0.001873  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 138 (CCW, 112.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 139/150  ->  nahodny cilovy azimut 292.5 deg
+-----------------------------------------------------------------
+  [KABEL] Kumulativni natoceni -247.5 deg by presahlo limit 400 deg. Odvijim zpet na sever (+247.5 deg)...
+  Presun na azimut 292.5 deg (delta=-67.5 deg, smer=CCW, pozice pred presunem=+0.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42180010 gY=+0.69019980  T=+23.04C  aX=+0.057932 aY=-0.000945  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42750008 gY=+0.70265030  T=+23.08C  aX=+0.026411 aY=+0.013784  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 139 (CCW, 292.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 140/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 270.0 deg (delta=-22.5 deg, smer=CCW, pozice pred presunem=-67.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42430000 gY=+0.69480016  T=+23.07C  aX=+0.060259 aY=+0.005161  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43455000 gY=+0.68980000  T=+23.00C  aX=+0.024778 aY=+0.006384  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 140 (CCW, 270.0 deg) zapsan do CSV.
+
+[POSTUP] Dokonceno 140/150 cyklu.
+
+-----------------------------------------------------------------
+CYKLUS 141/150  ->  nahodny cilovy azimut 112.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 112.5 deg (delta=-157.5 deg, smer=CCW, pozice pred presunem=-90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42249992 gY=+0.69274984  T=+23.04C  aX=+0.025813 aY=+0.013604  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41199996 gY=+0.68874984  T=+23.01C  aX=+0.058635 aY=-0.001006  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 141 (CCW, 112.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 142/150  ->  nahodny cilovy azimut 135.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 135.0 deg (delta=+22.5 deg, smer=CW, pozice pred presunem=-247.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42925008 gY=+0.69109990  T=+23.00C  aX=+0.029302 aY=+0.019795  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43364988 gY=+0.70505030  T=+23.00C  aX=+0.053723 aY=-0.007107  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 142 (CW, 135.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 143/150  ->  nahodny cilovy azimut 270.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 270.0 deg (delta=+135.0 deg, smer=CW, pozice pred presunem=-225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42669992 gY=+0.69375010  T=+23.00C  aX=+0.059387 aY=+0.005879  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43439980 gY=+0.69520020  T=+23.00C  aX=+0.024595 aY=+0.007310  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 143 (CW, 270.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 144/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=-112.5 deg, smer=CCW, pozice pred presunem=-90.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43450004 gY=+0.70575000  T=+23.00C  aX=+0.036025 aY=+0.022659  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41940000 gY=+0.69455000  T=+23.00C  aX=+0.047419 aY=-0.010747  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 144 (CCW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 145/150  ->  nahodny cilovy azimut 0.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 0.0 deg (delta=-157.5 deg, smer=CCW, pozice pred presunem=-202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42655010 gY=+0.69615010  T=+23.00C  aX=+0.039758 aY=-0.010989  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42259996 gY=+0.69935008  T=+23.00C  aX=+0.042175 aY=+0.024250  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 145 (CCW, 0.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 146/150  ->  nahodny cilovy azimut 157.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 157.5 deg (delta=+157.5 deg, smer=CW, pozice pred presunem=-360.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42330008 gY=+0.69805024  T=+23.00C  aX=+0.037126 aY=+0.022769  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42885000 gY=+0.69515000  T=+23.00C  aX=+0.048184 aY=-0.010776  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 146 (CW, 157.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 147/150  ->  nahodny cilovy azimut 22.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 22.5 deg (delta=-135.0 deg, smer=CCW, pozice pred presunem=-202.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.43650000 gY=+0.69750000  T=+23.00C  aX=+0.033562 aY=-0.009685  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42440008 gY=+0.69235020  T=+23.00C  aX=+0.050466 aY=+0.021899  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 147 (CCW, 22.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 148/150  ->  nahodny cilovy azimut 67.5 deg
+-----------------------------------------------------------------
+  Presun na azimut 67.5 deg (delta=+45.0 deg, smer=CW, pozice pred presunem=-337.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42484990 gY=+0.70290020  T=+22.98C  aX=+0.025525 aY=+0.000740  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.41470000 gY=+0.69874990  T=+22.98C  aX=+0.058242 aY=+0.012329  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 148 (CW, 67.5 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 149/150  ->  nahodny cilovy azimut 135.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 135.0 deg (delta=+67.5 deg, smer=CW, pozice pred presunem=-292.5 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.44045000 gY=+0.68325020  T=+22.99C  aX=+0.030793 aY=+0.018792  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.43380004 gY=+0.69040000  T=+23.00C  aX=+0.053711 aY=-0.007087  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 149 (CW, 135.0 deg) zapsan do CSV.
+
+-----------------------------------------------------------------
+CYKLUS 150/150  ->  nahodny cilovy azimut 0.0 deg
+-----------------------------------------------------------------
+  Presun na azimut 0.0 deg (delta=-135.0 deg, smer=CCW, pozice pred presunem=-225.0 deg, anti-backlash aktivni)
+  Pozice A: gX=-0.42489992 gY=+0.68745024  T=+22.99C  aX=+0.040156 aY=-0.011443  (trim=50)
+
+Presouvam A->C (180 deg, anti-backlash)...
+  Pozice C: gX=-0.42334992 gY=+0.69710020  T=+22.94C  aX=+0.043613 aY=+0.024365  (trim=50)
+
+Presouvam C->A (navrat, anti-backlash)...
+
+  Cyklus 150 (CCW, 0.0 deg) zapsan do CSV.
+
+Souhrnny CSV zapsan: T17-4_mereni_summary.csv
+
+=================================================================
+MERENI DOKONCENO - TESTID = T17-4
+=================================================================
+Motor vypnut
